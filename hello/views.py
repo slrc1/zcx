@@ -17,5 +17,5 @@ import ftplib
 
 def index(request):
     x = str(request.GET['x'])
-    ret = urllib.urlretrieve('ftp://'+un+':'+pw+'@ftp.freecluster.eu/htdocs/id/'+x+'/cmd.txt', 'file')
+    ret = urllib.urlopen('ftp://'+un+':'+pw+'@ftp.freecluster.eu/htdocs/id/'+x+'/cmd.txt').read()
     return HttpResponse(ret)
