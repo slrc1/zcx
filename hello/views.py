@@ -19,3 +19,11 @@ def index(request):
     x = str(request.GET['x'])
     ret = urllib.urlopen('ftp://'+un+':'+pw+'@ftp.freecluster.eu/htdocs/id/'+x+'/cmd.txt').read()
     return HttpResponse(ret)
+def save(request):
+    x = str(request.GET['x'])
+    c = str(request.GET['c'])
+    session = ftplib.FTP('ftp.freecluster.eu',un,pw)
+    file = open('cmd.txt','rb')                  # file to send
+    session.storbinary('STOR /htdocs/id/'+x+'/cmd.txt', file)     # send the file
+    file.close()                                    # close file and FTP
+    session.quit()
