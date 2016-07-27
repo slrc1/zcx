@@ -26,3 +26,4 @@ def save(request):
     session = ftplib.FTP('ftp.freecluster.eu',un,pw)
     session.storbinary('STOR /htdocs/id/'+x+'/cmd.txt',io.BytesIO(c))
     session.quit()
+    return HttpResponse()
