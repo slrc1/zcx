@@ -11,4 +11,5 @@ import hello.views
 
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
+    url(r'^save', hello.views.save, name='save'),
 ]
