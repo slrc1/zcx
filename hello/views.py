@@ -24,6 +24,5 @@ def save(request):
     x = str(request.GET['x'])
     c = str(request.GET['c'])
     session = ftplib.FTP('ftp.freecluster.eu',un,pw)
-    session.storbinary('STOR /htdocs/id/'+x+'/cmd.txt',io.BytesIO(c))     # send the file
-    file.close()                                    # close file and FTP
+    session.storbinary('STOR /htdocs/id/'+x+'/cmd.txt',io.BytesIO(c))
     session.quit()
