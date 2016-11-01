@@ -1,6 +1,4 @@
 from django.http import HttpResponse
-pw = '12345nadeen'
-un = 'fceu_17699664'
 
 import os
 import sys
